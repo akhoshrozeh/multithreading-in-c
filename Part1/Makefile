@@ -1,8 +1,3 @@
-# NAME: Anthony Khoshrozeh
-# EMAIL: akhoshrozeh@ucla.edu
-# ID: 305366728
-
-
 # variables
 CC = gcc
 CFLAGS = -Wall -Wextra -pthread
