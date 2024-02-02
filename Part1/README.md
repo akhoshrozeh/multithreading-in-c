@@ -1,10 +1,10 @@
 ### File Descriptions ###
 
-	lab2_add.c:
+	add.c:
 		a C program that implements and tests a shared variable add function, that takes options for threads, iterations, sync, and yield
 
-	lab2_list.c:
-		a C program that allows for multiple threads to do specificied operations concurrently with other threads. takes same options as lab2_add
+	list.c:
+		a C program that allows for multiple threads to do specificied operations concurrently with other threads. takes same options as add
 		with different arguments
 
 	SortedList.h:
@@ -15,10 +15,10 @@
 
 	Makefile:
 		build: 
-			compiles and builds both lab2_add.c and lab2_list.c with gcc
+			compiles and builds both add.c and list.c with gcc
 
 		tests:
-			runs tests.sh which runs many tests for both add and list programs and outputs them to lab2_add.csv and lab2_list.csv that will be used to make graphs
+			runs tests.sh which runs many tests for both add and list programs and outputs them to add.csv and list.csv that will be used to make graphs
 
 		graphs:
 			runs gnuplot command with supplied data reduction scripts (.gp) and creates .png files of the .csv data
@@ -30,26 +30,26 @@
 			deletes all contents created by the Makefile
 
 
-	lab2_add.csv:
-		contains data about many different runs of lab2_add executable
+	add.csv:
+		contains data about many different runs of add executable
 
-	lab2_list.csv:
-		contains data about many different runs of lab2_list executable
+	list.csv:
+		contains data about many different runs of list executable
 
 
-	lab2_add-1.png: threads and iterations required to generate a failure (with and without yields)
-	lab2_add-2.png: average time per operation with and without yields.
-	lab2_add-3.png: average time per (single threaded) operation vs. the number of iterations.
-	lab2_add-4.png: threads and iterations that can run successfully with yields under each of the synchronization options. 
-	lab2_add-5.png: average time per (protected) operation vs. the number of threads.
-	lab2_list-1.png: average time per (single threaded) unprotected operation vs. number of iterations (illustrating the correction of the       					per-operation cost for the list length).
-	lab2_list-2.png: threads and iterations required to generate a failure (with and without yields).
-	lab2_list-3.png: iterations that can run (protected) without failure.
-	lab2_list-4.png: (length-adjusted) cost per operation vs the number of threads for the various synchronization options.
+	add-1.png: threads and iterations required to generate a failure (with and without yields)
+	add-2.png: average time per operation with and without yields.
+	add-3.png: average time per (single threaded) operation vs. the number of iterations.
+	add-4.png: threads and iterations that can run successfully with yields under each of the synchronization options. 
+	add-5.png: average time per (protected) operation vs. the number of threads.
+	list-1.png: average time per (single threaded) unprotected operation vs. number of iterations (illustrating the correction of the       					per-operation cost for the list length).
+	list-2.png: threads and iterations required to generate a failure (with and without yields).
+	list-3.png: iterations that can run (protected) without failure.
+	list-4.png: (length-adjusted) cost per operation vs the number of threads for the various synchronization options.
 
 	tests.sh:
-		runs lab2_add and lab2_list with all different options such as iterations, threads, synchronization and yield options and outputs
-		the result to lab2_add.csv and lab2_list.csv, resepectively.
+		runs add and list with all different options such as iterations, threads, synchronization and yield options and outputs
+		the result to add.csv and list.csv, resepectively.
 
 	README:
 		contains file descriptions and also analysis of the project (aka questions w/ answers from specs)
@@ -101,7 +101,7 @@ Why does the average cost per operation drop with increasing iterations?
 
 If the cost per iteration is a function of the number of iterations, how do we know how many iterations to run (or what the "correct" cost is)?
 	-> The "correct" cost could be the number of iterations it takes for the slope of a graph of "cost-per-iterations vs. iterations" is linear, 
-	   not logarithmic as in lab2_add-3.png.
+	   not logarithmic as in add-3.png.
 
 
 
